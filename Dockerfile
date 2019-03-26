@@ -6,7 +6,7 @@ From library/python:3.6.0-alpine
 RUN pip install tornado
 
 # Copy the webserver python app.
-ADD web-server.py / web-server.py
+ADD web-server.py / web-server.py/
 
 # Set the default excution command for this image
 CMD ["python", "/web-server.py"]
