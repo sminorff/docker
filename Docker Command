@@ -1,0 +1,11 @@
+#설치
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+#라이브러리 설치
+sudo apt-get install -y python3 python3-pip
+pip3 install tornado
+
+
+#git 주소
+git clone 
