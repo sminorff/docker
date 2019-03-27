@@ -11,5 +11,28 @@ curl localhost:8888
 sudo docker build -t py-web-server:v1 .
 sudo docker run -d -p 8888:8888 --name py-web-server -h my-web-server py-web-server:v1
 
+sudo docker pull willnz/py-web-server:v1
+
+sudo docker run -d -p 8888:8888 -h my-web-server willnz/py-web-server:v1
+
 #git 주소
 git clone https://github.com/sminorff/docker.git
+
+#Docker Compose 설치
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo docker-compose --version
+
+#Bitnami Wordpress 설치
+sudo curl -LO https://raw.githubusercontent.com/bitnami/bitnami-docker-wordpress/master/docker-compose.yml
+sudo docker-compose up
+
+#Kubernetes 설치
+gcloud config set compute/zone us-central1-a
+gcloud container clusters create lab01 --num-nodes 3 --scopes "https://www.googleapis.com/auth/projecthosting,storage-rw"
+
+#kubectl 명령어
+kubectl version
+kubectl cluster-info
+kubectl get node
+kubectl get node -owide
