@@ -45,3 +45,5 @@ kubectl describe pod [pod name]
 kubectl expose deployment nginx --port 80 --type LoadBalancer
 kubectl exec -it [pod name] sh
 sudo apt-get install -y procps
+cd /usr/share/nginx/html
+ls
