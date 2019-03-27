@@ -6,6 +6,10 @@ sudo sh get-docker.sh
 sudo apt-get install -y python3 python3-pip
 pip3 install tornado
 
+python3 web-server.py &
+curl localhost:8888
+sudo docker build -t py-web-server:v1 .
+sudo docker run -d -p 8888:8888 --name py-web-server -h my-web-server py-web-server:v1
 
 #git 주소
 git clone https://github.com/sminorff/docker.git
