@@ -36,3 +36,12 @@ kubectl version
 kubectl cluster-info
 kubectl get node
 kubectl get node -owide
+kubectl run nginx --image=nginx:1.10.0
+kubectl delete pod [pod name]
+kubectl get pods
+kubectl get deploy
+kubectl get svc
+kubectl describe pod [pod name]
+kubectl expose deployment nginx --port 80 --type LoadBalancer
+kubectl exec -it [pod name] sh
+sudo apt-get install -y procps
