@@ -12,6 +12,8 @@ docker ps -a
 docker start [NAMES]
 docker attach [NAMES]
 docker stop [NAMES]
+docker exec [NAMES] touch /test.txt
+
 docker rm [NAMES]
 docker rmi [REPOSITORY NAME]
 docker run -i -t [REPOSITORY NAME]:[TAG] /bin/bash
