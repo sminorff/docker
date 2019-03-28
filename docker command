@@ -1,0 +1,18 @@
+docker version
+docker images
+docker pull hello-world:latest
+docker run -d --name [NAME] [REPOSITORY NAME]:[TAG] 
+
+docker run -d --name [NAME] -p[HOST PORT][DOCKER PORT] [REPOSITORY NAME]:[TAG] 
+
+
+docker search nginx
+docker ps
+docker ps -a
+docker start [NAMES]
+docker attach [NAMES]
+docker stop [NAMES]
+docker rm [NAMES]
+docker rmi [REPOSITORY NAME]
+docker run -i -t [REPOSITORY NAME]:[TAG] /bin/bash
+Ctrl+P+Q = 컨테이너 나오기
