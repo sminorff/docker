@@ -17,4 +17,9 @@ docker exec [NAMES] touch /test.txt
 docker rm [NAMES]
 docker rmi [REPOSITORY NAME]
 docker run -i -t [REPOSITORY NAME]:[TAG] /bin/bash
+
+#도커 이미지 이름 전 > 후로 바꾸기
+docker tag 전[REPOSITORY]:[TAG] 후[REPOSITORY]:[TAG]
+docker tag willnz/py-web-server:v1 py-web-server:1
+
 Ctrl+P+Q = 컨테이너 나오기
