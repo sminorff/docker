@@ -48,3 +48,4 @@ sudo apt-get install -y procps
 cd /usr/share/nginx/html
 ls
 kubectl get pods --all-namespaces
+kubectl get pod {pod_name} -o json| jq '.status.containerStatuses'
