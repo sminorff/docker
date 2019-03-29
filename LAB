@@ -47,3 +47,4 @@ kubectl exec -it [pod name] sh
 sudo apt-get install -y procps
 cd /usr/share/nginx/html
 ls
+kubectl get pods --all-namespaces
