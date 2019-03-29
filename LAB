@@ -49,3 +49,5 @@ cd /usr/share/nginx/html
 ls
 kubectl get pods --all-namespaces
 kubectl get pod {pod_name} -o json| jq '.status.containerStatuses'
+#클러스터 지정 명령어
+gcloud container clusters get-credentials lab01 --zone us-central1-a --project peter-20181105
