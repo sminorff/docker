@@ -51,3 +51,13 @@ kubectl get pods --all-namespaces
 kubectl get pod {pod_name} -o json| jq '.status.containerStatuses'
 #클러스터 지정 명령어
 gcloud container clusters get-credentials lab01 --zone us-central1-a --project peter-20181105
+#yaml 파일을 이용한 pod 생성
+kubectl create -f pod2-1.yaml
+kubectl apply -f pod2-1.yaml
+
+kubectl get pod --show-labels
+kubectl get pod -l [labels]
+kubectl describe pod [pod name]
+kubectl delete -f [yaml file name]
+kubectl get node --show-labels
+gcloud --project [project ID] beta container operations list
