@@ -14,16 +14,11 @@ docker exec [NAMES] touch /test.txt
 docker exec heuristic_noether touch /test.txt
 docker rm [NAMES]
 
-
 docker run -d --name [NAME] [REPOSITORY NAME]:[TAG] 
+docker run -d --name GCP-NGINX nginx:latest
 
 docker run -d --name [NAME] -p[HOST PORT][DOCKER PORT] [REPOSITORY NAME]:[TAG] 
-
-
-
-
-
-
+docker run -d --name GCP-NGINX -p 8000:80 nginx:latest
 
 #도커 이미지 이름 전 > 후로 바꾸기
 docker tag 전[REPOSITORY]:[TAG] 후[REPOSITORY]:[TAG]
