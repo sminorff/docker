@@ -1,22 +1,29 @@
 docker version
-docker images
-docker pull hello-world:latest
-docker run -d --name [NAME] [REPOSITORY NAME]:[TAG] 
-
-docker run -d --name [NAME] -p[HOST PORT][DOCKER PORT] [REPOSITORY NAME]:[TAG] 
-
-
 docker search nginx
+docker pull hello-world:latest
+docker images
+docker rmi [IMAGE ID]
+docker rmi [REPOSITORY NAME]
+docker run -i -t [REPOSITORY NAME]:[TAG] /bin/bash
 docker ps
 docker ps -a
 docker start [NAMES]
 docker attach [NAMES]
 docker stop [NAMES]
 docker exec [NAMES] touch /test.txt
-
+docker exec heuristic_noether touch /test.txt
 docker rm [NAMES]
-docker rmi [REPOSITORY NAME]
-docker run -i -t [REPOSITORY NAME]:[TAG] /bin/bash
+
+
+docker run -d --name [NAME] [REPOSITORY NAME]:[TAG] 
+
+docker run -d --name [NAME] -p[HOST PORT][DOCKER PORT] [REPOSITORY NAME]:[TAG] 
+
+
+
+
+
+
 
 #도커 이미지 이름 전 > 후로 바꾸기
 docker tag 전[REPOSITORY]:[TAG] 후[REPOSITORY]:[TAG]
