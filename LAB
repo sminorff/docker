@@ -64,3 +64,4 @@ kubectl describe pod [pod name]
 kubectl delete -f [yaml file name]
 kubectl get node --show-labels
 gcloud --project [project ID] beta container operations list
+kubectl scale deploy nginx-app --replicas=2
