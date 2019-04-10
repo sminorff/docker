@@ -12,14 +12,13 @@ sudo docker build -t py-web-server:v1 .
 sudo docker run -d -p 8888:8888 --name py-web-server -h my-web-server py-web-server:v1
 sudo docker run -d --name GCP-Webserver -p 8888:8888 -h my-web-server py-web-server:v1
 
-
-
 sudo docker pull willnz/py-web-server:v1
 
 sudo docker run -d -p 8888:8888 -h my-web-server willnz/py-web-server:v1
 
 #git 주소
 git clone https://github.com/sminorff/docker.git
+git clone https://github.com/googlecodelabs/orchestrate-with-kubernetes.git
 
 #Docker Compose 설치
 sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
