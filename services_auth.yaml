@@ -1,0 +1,14 @@
+#### services/auth.yaml
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: "auth"
+spec:
+  selector:
+    app: "auth"
+  ports:
+    - protocol: "TCP"
+      port: 80
+      targetPort: 80
+
