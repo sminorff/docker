@@ -2,6 +2,21 @@
 sudo curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 
+#Dockerfile
+FROM ubuntu:latest
+LABEL maintainer peter@google.com
+RUN apt-get update -y
+RUN apt-get install -y python-pip python-dev build-essential
+COPY . /app
+WORKDIR /app
+RUN pip install -y requirements.txt
+EXPOSE 5000
+ENTRYPOINT ["python"]
+CMD ["application.py"]
+
+#Requirements.txt
+mysql-connector-python
+
 #라이브러리 설치
 sudo apt-get install -y python3 python3-pip
 pip3 install tornado
