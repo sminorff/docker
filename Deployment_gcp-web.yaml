@@ -2,39 +2,18 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: gcp-web
-  annotations:
-    deployment.kubernetes.io/revision: "1"
-    generation: 3
-  labels:
-    run: gcp-web
-  namespace: default
 spec:
   replicas: 1
   template:
     metadata:
       labels:
         run: gcp-web
-  revisionHistoryLimit: 5
-  selector:
-    matchLabels:
-      run: gcp-web
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
-  
+        track: stable
     spec:
       containers:
-      - image: gcr.io/peter-20181105/gcp-webserver:v1
-        imagePullPolicy: IfNotPresent
-        name: gcp-web
-        resources: {}
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
-
+        - name: gcp-web
+          image: gcr.io/peter-20181105/gcp-webserver:v1
+          resources:
+            limits:
+              cpu: 0.2
+              memory: "10Mi"
