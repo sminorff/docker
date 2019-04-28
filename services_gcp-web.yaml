@@ -1,15 +1,11 @@
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
-  labels:
-    run: gcp-web
-  name: gcp-web
-  namespace: default
+  name: "auth"
 spec:
-  ports:
-  - port: 8888
-    protocol: TCP
-    targetPort: 8888
   selector:
-    run: gcp-web
-    type: LoadBalancer
+    app: "auth"
+  ports:
+    - protocol: "TCP"
+      port: 80
+      targetPort: 80
