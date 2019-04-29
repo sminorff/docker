@@ -1,18 +1,19 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: auth
+  name: hello
 spec:
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
-        app: auth
+        app: hello
         track: stable
+        version: 1.0.0
     spec:
       containers:
-        - name: auth
-          image: "kelseyhightower/auth:2.0.0"
+        - name: hello
+          image: "kelseyhightower/hello:1.0.0"
           ports:
             - name: http
               containerPort: 80
@@ -36,4 +37,3 @@ spec:
               port: 81
               scheme: HTTP
             initialDelaySeconds: 5
-            timeoutSeconds: 1
