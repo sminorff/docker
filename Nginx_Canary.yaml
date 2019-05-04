@@ -8,7 +8,7 @@ spec:
     metadata:
       labels:
         app: gcp
-        track: stable
+        track: canary
         version: 1.8
     spec:
       containers:
