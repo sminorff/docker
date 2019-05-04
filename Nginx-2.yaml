@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: nginx
+  name: nginx-rolling-update
 spec:
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       labels:
