@@ -1,12 +1,18 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: "nginx"
+  labels:
+    app: gcp
+    track: stable
+    version: 1.7.9
+  name: nginx
 spec:
-  selector:
-    app: "gcp"
   ports:
-    - protocol: "TCP"
-      port: 80
-      targetPort: 80
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: gcp
+    track: stable
+    version: 1.7.9
   type: LoadBalancer
