@@ -1,3 +1,6 @@
+#kubectl 명령어 자동 완성
+source <(kubectl completion bash)
+
 #설치
 sudo curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
