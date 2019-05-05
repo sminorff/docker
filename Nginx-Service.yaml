@@ -1,5 +1,5 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: "nginx"
 spec:
@@ -8,5 +8,5 @@ spec:
       port: 80
       targetPort: 80
   selector:
-    -name: "ngnix"
-     type: LoadBalancer
+      name: "ngnix"
+      type: LoadBalancer
