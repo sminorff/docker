@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx
+spec:
+  selector:
+    app: gcp
+    version: 1.8.1
+  ports:
+    - protocol: TCP
+      port: 80
+targetPort: 80
