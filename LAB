@@ -1,4 +1,5 @@
 #kubectl 명령어 자동 완성
+
 echo "source <(kubectl completion bash)" >> ~/.bashrc
 
 #설치
