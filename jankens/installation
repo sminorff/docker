@@ -25,3 +25,4 @@ cp linux-amd64/helm .
 $ kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=$(gcloud config get-value account)
 
 clusterrolebinding.rbac.authorization.k8s.io/cluster-admin-binding created
+kubectl port-forward $POD_NAME 8080:8080 >>/home/sminorff_lee/ &
