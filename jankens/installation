@@ -1,0 +1,27 @@
+1. Get your 'admin' user password by running:
+  printf $(kubectl get secret --namespace default cd-jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode);echo
+2. Get the Jenkins URL to visit by running these commands in the same shell:
+  export POD_NAME=$(kubectl get pods --namespace default -l "component=cd-jenkins-master" -o jsonpath="{.items[0].metadata.name}")
+  echo http://127.0.0.1:8080
+  kubectl port-forward $POD_NAME 8080:8080
+
+3. Login with the password from step 1 and the username: admin
+
+For more information on running Jenkins on Kubernetes, visit:
+https://cloud.google.com/solutions/jenkins-on-container-engine
+Configure the Kubernetes plugin in Jenkins to use the following Service Account name cd-jenkins using the following steps:
+  Create a Jenkins credential of type Kubernetes service account with service account name cd-jenkins
+  Under configure Jenkins -- Update the credentials config in the cloud section to use the service account credential you created in the step above.
+
+#
+git clone https://github.com/GoogleCloudPlatform/continuous-deployment-on-kubernetes.git
+cd continuous-deployment-on-kubernetes
+
+#
+wget https://storage.googleapis.com/kubernetes-helm/helm-v2.9.1-linux-amd64.tar.gz
+tar zxfv helm-v2.9.1-linux-amd64.tar.gz
+cp linux-amd64/helm .
+
+$ kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=$(gcloud config get-value account)
+
+clusterrolebinding.rbac.authorization.k8s.io/cluster-admin-binding created
