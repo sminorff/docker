@@ -26,3 +26,7 @@ $ kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-
 
 clusterrolebinding.rbac.authorization.k8s.io/cluster-admin-binding created
 kubectl port-forward $POD_NAME 8080:8080 >>/home/sminorff_lee/ &
+
+
+git clone https://github.com/kubernetes/charts.git
+
