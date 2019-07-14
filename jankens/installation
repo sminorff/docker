@@ -35,7 +35,7 @@ helm version
 helm search jenkins
 helm search prometheus
 
-helm install -n cd stable/jenkins -f jenkins/values.yaml --version 0.16.6 --wait
+helm install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wait
 
 $ kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=$(gcloud config get-value account)
 
