@@ -13,14 +13,29 @@ Configure the Kubernetes plugin in Jenkins to use the following Service Account 
   Create a Jenkins credential of type Kubernetes service account with service account name cd-jenkins
   Under configure Jenkins -- Update the credentials config in the cloud section to use the service account credential you created in the step above.
 
-#
+
+#helm 설치(https://cloud.google.com/solutions/jenkins-on-kubernetes-engine-tutorial)
 git clone https://github.com/GoogleCloudPlatform/continuous-deployment-on-kubernetes.git
 cd continuous-deployment-on-kubernetes
 
-#
 wget https://storage.googleapis.com/kubernetes-helm/helm-v2.9.1-linux-amd64.tar.gz
 tar zxfv helm-v2.9.1-linux-amd64.tar.gz
 cp linux-amd64/helm .
+
+$kubectl create serviceaccount tiller --namespace kube-system
+$kubectl create clusterrolebinding tiller-admin-binding --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+
+./helm init --service-account=tiller
+./helm repo update
+
+kubectl get deployments -n kube-system
+
+helm version
+
+helm search jenkins
+helm search prometheus
+
+helm install -n cd stable/jenkins -f jenkins/values.yaml --version 0.16.6 --wait
 
 $ kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=$(gcloud config get-value account)
 
